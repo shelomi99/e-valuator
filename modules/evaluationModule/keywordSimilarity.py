@@ -17,6 +17,7 @@ def generateKeywords(text):
     # removing duplicate keywords
     extracted_keywords = list(dict(model_keywords).keys())
     print(extracted_keywords)
+    return extracted_keywords
 
 
 def get_fuzzy_keyword_similarity(text=None, dictionary=None):
@@ -30,7 +31,7 @@ def get_fuzzy_keyword_similarity(text=None, dictionary=None):
         if not token.is_stop:
             tokens.append(token.text)
 
-    # removing dulicates in the token list
+    # removing duplicates in the token list
     cleaned_token_list = (list(dict.fromkeys(tokens)))
 
     for token in cleaned_token_list:
@@ -48,5 +49,5 @@ def get_fuzzy_keyword_similarity(text=None, dictionary=None):
     print("expected_num_of_keywords =", expected_num_of_keywords)
     print("matched_num_of_keywords =", matched_num_of_keywords)
     print("keyword_similarity_score = ", keyword_similarity_score)
-    # [x for x in keyword_similarity if x] -> to remove emplty lists
+    # to remove empty lists
     return [x for x in keyword_similarity if x]
