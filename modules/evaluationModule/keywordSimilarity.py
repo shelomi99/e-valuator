@@ -50,4 +50,5 @@ def get_fuzzy_keyword_similarity(text=None, dictionary=None):
     print("matched_num_of_keywords =", matched_num_of_keywords)
     print("keyword_similarity_score = ", keyword_similarity_score)
     # to remove empty lists
-    return [x for x in keyword_similarity if x]
+    similarity = [x for x in keyword_similarity if x]
+    return similarity
