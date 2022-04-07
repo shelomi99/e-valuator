@@ -45,7 +45,7 @@ def generate_knowledge_graph(question_no, student_id, is_model_answer):
         print("Exception when calling DefaultApi->stlabToolsFredGet: %s\n" % e)
 
     if is_model_answer:
-        file = open('test.owl', 'wb')
+        file = open('rdfFiles/test.owl', 'wb')
         file.write(rdf_content)
         file.close()
     return rdf_content
