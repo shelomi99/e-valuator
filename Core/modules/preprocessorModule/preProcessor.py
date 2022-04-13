@@ -20,8 +20,7 @@ def extractTokens(text):
     for token in doc:
         if not token.is_stop and not token.is_punct:
             tokens.append(token.text)
-
-    print("Tokens --> ", tokens, "\n")
+    return tokens
 
 
 def extractPosAndNamedEntity(text):
@@ -37,14 +36,12 @@ def extractPosAndNamedEntity(text):
     # Extracting Named Entities
     for ent in doc.ents:
         nerTags.append((ent.text, ent.label_))
-
-    print("POS tags --> ", posTags, "\n")
-    print("NER tags --> ", nerTags, "\n")
+    return nerTags
 
 
 def extractSentences(text):
     doc = nlp(text)
     sentences = ""
     sentences = [sent.text for sent in doc.sents]
-    print("Sentences --> ", sentences, "\n")
+    return sentences
 
