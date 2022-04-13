@@ -4,6 +4,7 @@ import requests
 
 
 def generate_knowledge_graph(question_no, student_id, is_model_answer):
+    API_KEY = 'Bearer 06d0bc6e-9fec-3e8c-b862-34136ca9331e'
     # create an instance of the API class
     api_instance = swagger_client.DefaultApi()
     # String | The input natural language text.
@@ -25,7 +26,7 @@ def generate_knowledge_graph(question_no, student_id, is_model_answer):
     try:
         headers = {
             'accept': 'application/rdf+xml',
-            'Authorization': 'Bearer 06d0bc6e-9fec-3e8c-b862-34136ca9331e',
+            'Authorization': API_KEY,
         }
 
         params = {
@@ -44,8 +45,14 @@ def generate_knowledge_graph(question_no, student_id, is_model_answer):
     except ApiException as e:
         print("Exception when calling DefaultApi->stlabToolsFredGet: %s\n" % e)
 
+    filename = student_id + "_" + question_no
     if is_model_answer:
-        file = open('rdfFiles/test.owl', 'wb')
+        filename = filename + "_model"
+    else:
+        filename = filename + "_student"
+
+    if is_model_answer:
+        file = open('rdfFiles/filename', 'wb')
         file.write(rdf_content)
         file.close()
     return rdf_content
