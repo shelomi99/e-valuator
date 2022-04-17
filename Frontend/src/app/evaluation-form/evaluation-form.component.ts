@@ -1,5 +1,6 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 import {FormGroup, FormControl, FormArray, FormBuilder, Validators} from '@angular/forms'
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-evaluation-form',
@@ -12,8 +13,10 @@ export class EvaluationFormComponent implements OnInit {
   keywordSet: any;
   keywords: string[] = [];
   isSubmit: boolean =  false;
+  results: any;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private auth: AuthService) { }
 
   ngOnInit(): void {
     this.evaluationForm = this.formBuilder.group({
@@ -31,6 +34,14 @@ export class EvaluationFormComponent implements OnInit {
     this.isSubmit = true;
     console.log(this.evaluationForm.value);
     console.log(this.keywords);
+
+    this.auth.send_get_request(
+      this.evaluationForm.value.id, this.evaluationForm.value.questionNumber, this.evaluationForm.value.question, this.evaluationForm.value.marks,
+      this.evaluationForm.value.modelAnswer, this.evaluationForm.value.studentAnswer, this.keywords
+    ).subscribe(response => {
+      console.log(response);
+      this.results = response
+    })
   }
 
   clearForm() {
