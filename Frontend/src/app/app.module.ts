@@ -8,6 +8,7 @@ import {NgbAlertModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { FeedbackComponent } from './feedback/feedback.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ViewReportComponent } from './view-report/view-report.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ViewReportComponent } from './view-report/view-report.component';
     NgbAlertModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

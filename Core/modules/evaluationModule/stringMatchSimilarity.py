@@ -8,10 +8,12 @@ from nltk.corpus import wordnet as wn
 # import nltk
 # nltk.download('punkt')
 # nltk.download('stopwords')
-# nltk.download('averaged_perceptron_tagger')
+# nltk.download('averagwheed_perceptron_tagger')
 # nltk.download('wordnet')
 # nltk.download('omw-1.4')
+
 similarity_benchmark = 0.8
+
 
 def total_magnitude(vector):
     total = 0
@@ -58,11 +60,12 @@ def wordSimilarity(tag1, tag2):
     similarity_vec2 = similarityVectors(postag2, postag1)
     return similarity_vec1, similarity_vec2
 
+
 # Calculating the similarity of words in the sentences.
-def semanticSimilarity(sentence1, sentence2):
+def stringSimilarity(model_answer, student_answer):
     global similarity_benchmark
-    tokens1 = word_tokenize(sentence1)
-    tokens2 = word_tokenize(sentence2)
+    tokens1 = word_tokenize(model_answer)
+    tokens2 = word_tokenize(student_answer)
     tokens1 = [word for word in tokens1 if word not in stopwords.words('english')]
     tokens2 = [word for word in tokens2 if word not in stopwords.words('english')]
     stemmer = PorterStemmer()
@@ -87,11 +90,14 @@ def semanticSimilarity(sentence1, sentence2):
     else:
         m = max(len(tokens1), len(tokens2)) / 2
         similarity = sim_mag / m
-    return similarity
 
-if __name__ == '__main__':
-    s1 = 'It\'s a huge black eye, said publisher Arthur Ochs Sulzberger Jr., whose family has controlled the paper since 1896.'
-    s2 = 'It\'s a huge black eye, Arthur Sulzberger, the newspaper\'s publisher, said of the scandal.'
-    sim = semanticSimilarity(s1, s2)
-    print(sim)
+    string_matching_similarity = "{:.2f}".format(similarity * 10)
+    # 20% of the total score is allocated for the keyword similarity score
+    return float(string_matching_similarity)
 
+
+# # testing method
+# model_answer = 'It\'s a huge black eye, said publisher Arthur Ochs Sulzberger Jr., whose family has controlled the paper since 1896.'
+# student_answer = 'It\'s a huge black eye, said publisher Arthur '
+# similarity = semanticSimilarity(model_answer, student_answer)
+# print(similarity, "/10")

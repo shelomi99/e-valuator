@@ -1,0 +1,129 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#"
+    xmlns:j.1="http://ontologydesignpatterns.org/cp/owl/semiotics.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:j.2="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#"
+    xmlns:j.3="http://www.essepuntato.it/2008/12/earmark#"
+    xmlns:j.4="http://www.w3.org/2006/03/wn/wn30/schema/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:j.5="http://www.ontologydesignpatterns.org/ont/boxer/boxer.owl#"
+    xmlns:j.6="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#"
+    xmlns:j.7="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#" > 
+  <rdf:Description rdf:about="http://www.essepuntato.it/2008/12/earmark#hasContent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2008/12/earmark#refersTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_0_6_Oxygen">
+    <j.6:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#NNP"/>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Element"/>
+    <j.3:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oxygen</rdfs:label>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Oxygen"/>
+    <j.3:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</j.3:begins>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Chemical"/>
+    <j.3:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</j.3:ends>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2006/03/wn/wn30/instances/synset-component-noun-1">
+    <j.4:gloss xml:lang="en-us">an abstract part of something; "jealousy was a component of his character"; "two constituents of a musical composition are melody and harmony"; "the grammatical elements of a sentence"; "a key factor in her success"; "humor: an effective ingredient of a speech"</j.4:gloss>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2008/12/earmark#begins">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_21_28_element">
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Oxygen"/>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#element_1"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">element</rdfs:label>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.3:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">28</j.3:ends>
+    <j.3:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Element"/>
+    <j.6:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#NN"/>
+    <j.3:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">21</j.3:begins>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#hasDeterminer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_12_28_chemical+element">
+    <j.3:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">12</j.3:begins>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chemical element</rdfs:label>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#ChemicalElement"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chemical Element</rdfs:label>
+    <j.3:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <j.3:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">28</j.3:ends>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Element">
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/synset-component-noun-1"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/supersense-noun_cognition"/>
+    <j.6:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#n"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2006/03/wn/wn30/instances/synset-chemical-noun-1">
+    <j.4:gloss xml:lang="en-us">material produced by or used in a reaction involving changes in atoms or molecules</j.4:gloss>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologydesignpatterns.org/cp/owl/semiotics.owl#hasInterpretant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#chemical_1">
+    <j.0:hasDeterminer rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#a"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Chemical"/>
+    <j.7:associatedWith rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Oxygen"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#ChemicalElement">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Element"/>
+    <j.7:associatedWith rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Chemical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#pennpos">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#boxerpos">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_12_20_chemical">
+    <j.3:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">20</j.3:ends>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chemical</rdfs:label>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#chemical_1"/>
+    <j.6:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#NN"/>
+    <j.3:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Oxygen"/>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Chemical"/>
+    <j.3:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">12</j.3:begins>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse">
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#StringDocuverse"/>
+    <j.3:hasContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oxygen is a chemical element </j.3:hasContent>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2008/12/earmark#ends">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Oxygen">
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#ChemicalElement"/>
+    <j.5:possibleType rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologydesignpatterns.org/cp/owl/semiotics.owl#denotes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Chemical">
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/synset-chemical-noun-1"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+    <j.6:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#n"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/supersense-noun_substance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/boxer/boxer.owl#possibleType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+</rdf:RDF>

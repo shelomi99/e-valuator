@@ -1,28 +1,30 @@
-import swagger_client
-from swagger_client.rest import ApiException
+import os
+from Core.config import Config
 import requests
 
+from Core.modules.graphGeneratorModule.knowledgeGraphComparison import upload_rdf_file
 
-def generate_knowledge_graph(question_no, student_id, is_model_answer):
-    API_KEY = 'Bearer 06d0bc6e-9fec-3e8c-b862-34136ca9331e'
-    # create an instance of the API class
-    api_instance = swagger_client.DefaultApi()
-    # String | The input natural language text.
-    text = 'Dominant allele always expressed in heterozygote'
-    # String | The prefix used for the namespace of terms introduced by FRED in the output
+
+def generate_knowledge_graph_similarity(model_answer, student_answer, question_no, student_id):
+    # Initializing the params
+    API_KEY = Config.API_KEY
+    # The input natural language text.
+    text = model_answer
+    # The prefix used for the namespace of terms introduced by FRED in the output
     prefix = 'e-valuator'
-    # # String | The namespace used for the terms introduced by FRED in the output.
+    # The namespace used for the terms introduced by FRED in the output.
     namespace = 'http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#'
-    # Boolean | Perform Word Sense Disambiguation on input terms. By default it is set to false. (optional)
+    # Perform Word Sense Disambiguation on input terms.
     wsd = True
-    # Boolean | Perform Word Frame Disambiguation on input terms in order to provide alignments to WordNet synsets.
+    # Perform Word Frame Disambiguation on input terms in order to provide alignments to WordNet synsets.
     wfd = True
-    # String | The profile associated with the Word Frame Disambiguation (optional) (default to b)
+    # The profile associated with the Word Frame Disambiguation (default to b)
     wfd_profile = 'b'
-    # String | The vocabulary used for annotating the text in RDF. EARMARK or NIF
+    # The vocabulary used for annotating the text in RDF. EARMARK or NIF
     text_annotation = 'earmark'
-    # Boolean | Generate a RDF which only expresses the semantics of a sentence without additional RDF triples.
+    # Generate a RDF which only expresses the semantics of a sentence without additional RDF triples.
     semantic_subgraph = False
+    # Generating RDF files
     try:
         headers = {
             'accept': 'application/rdf+xml',
@@ -42,21 +44,21 @@ def generate_knowledge_graph(question_no, student_id, is_model_answer):
 
         response = requests.get('http://wit.istc.cnr.it/stlab-tools/fred', headers=headers, params=params)
         rdf_content = response.content
-    except ApiException as e:
-        print("Exception when calling DefaultApi->stlabToolsFredGet: %s\n" % e)
+    except Exception as e:
+        print("Exception when calling stlabToolsFredGet: %s\n" % e)
 
-    filename = student_id + "_" + question_no
-    if is_model_answer:
-        filename = filename + "_model"
-    else:
-        filename = filename + "_student"
+    filename = str(student_id) + "_" + str(question_no)
+    filename = filename + "_model" + ".owl"
+    complete_file_name = os.path.join('C:\\Shelomi\\Final year\\E-Valuator\\e-valuator\\Core\\modules\\graphGeneratorModule\\rdfFiles\\modelAnswers', filename)
+    file = open(complete_file_name, 'wb')
 
-    if is_model_answer:
-        file = open('rdfFiles/filename', 'wb')
-        file.write(rdf_content)
-        file.close()
-    return rdf_content
+    file.write(rdf_content)
+    file.close()
+
+    # upload rdf file to fuseki server
+    rdf_file = upload_rdf_file(complete_file_name, question_no, student_id, text, student_answer)
+    return rdf_file
 
 
-generate_knowledge_graph(1, 1, True)
-
+# test method
+# generate_knowledge_graph_similarity("Goblet cells release mucus. Mucus traps dirt. Cilia beat to move fluid of airway.", " Mucus traps dirt", 5, 1)
