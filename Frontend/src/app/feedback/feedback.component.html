@@ -1,4 +1,4 @@
-<div class="results shadow-md mt-5 p-3">
+<div class="results shadow-md mt-5 p-3" #target>
   <div class="row justify-content-center">
     <div class="col-auto">
       <h2 class="form-label">Feedback</h2>
@@ -8,28 +8,40 @@
     <table class="table table-bordered">
       <tbody>
       <tr>
-        <th scope="row">Target Keywords</th>
-        <td></td>
+        <th scope="row">Target Keywords<p>(matched keywords are shown in green)</p></th>
+        <td class="keywords">
+          <div *ngFor="let keyword of resultsArray.required_keywords">
+            <button *ngIf="resultsArray.matched_keyword.includes(keyword)" type="button" class="btn btn-success me-2 mb-1">{{keyword}}</button>
+            <button *ngIf="!resultsArray.matched_keyword.includes(keyword)" type="button" class="btn btn-outline-primary me-2 mb-1">{{keyword}}</button>
+          </div>
+        </td>
       </tr>
       <tr>
         <th scope="row">Similarity Score values</th>
-        <td></td>
+        <td>
+          <div>
+            <p>Keyword Similarity Score: {{resultsArray.keyword_similarity_score}}</p>
+            <p>String Similarity Score: {{resultsArray.string_similarity_score}}</p>
+            <p>Semantic Similarity Score: {{resultsArray.semantic_similarity_score}}</p>
+          </div>
+        </td>
       </tr>
       <tr>
         <th scope="row">Final Score</th>
-        <td></td>
+        <td>{{resultsArray.final_mark}}</td>
       </tr>
       </tbody>
     </table>
   </div>
   <div class="feedback m-4">
     <h5>General Feedback</h5>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
+    <p class="fw-bold">Questions which needs improvements</p>
+    <p>{{resultsArray.incorrect_questions}}</p>
   </div>
   <div class="row m-4">
     <div class="submit d-md-flex justify-content-md-end">
       <button type="submit" class="btn me-3">Add to Student Report</button>
-      <button type="submit" class="btn">Add new question</button>
+      <button type="submit" class="btn" (click)="scrollToTop()">Recalculate Mark</button>
     </div>
   </div>
 </div>

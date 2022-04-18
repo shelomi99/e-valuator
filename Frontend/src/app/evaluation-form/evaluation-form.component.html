@@ -103,6 +103,7 @@
           </div>
           <div class="col-sm-9">
             <textarea class="form-control" id="inputModelAnswer" placeholder="Enter Model Answer" formControlName="modelAnswer"
+                      oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
                       [ngClass]="(evaluationForm.controls.modelAnswer.touched || evaluationForm.controls.modelAnswer.dirty)  &&
                        evaluationForm.controls.modelAnswer.errors? 'is-invalid': '' ||
                        ((evaluationForm.controls.modelAnswer.touched ||
@@ -116,6 +117,7 @@
           </div>
           <div class="col-sm-9">
             <textarea class="form-control" id="inputStudentAnswer" placeholder="Enter Student Answer" formControlName="studentAnswer"
+                      oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
                       [ngClass]="(evaluationForm.controls.studentAnswer.touched || evaluationForm.controls.studentAnswer.dirty)  &&
                        evaluationForm.controls.studentAnswer.errors? 'is-invalid': '' ||
                        ((evaluationForm.controls.studentAnswer.touched ||
@@ -132,8 +134,15 @@
       </div>
     </div>
   </div>
+  <div>
+    <div class="spinner" *ngIf="showSpinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
 </div>
-<div class="show-graph" #target>
+<div #target>
   <app-feedback *ngIf="isSubmit"></app-feedback>
 </div>
 

@@ -14,6 +14,7 @@ export class EvaluationFormComponent implements OnInit {
   keywords: string[] = [];
   isSubmit: boolean =  false;
   results: any;
+  showSpinner: boolean;
 
   constructor(private formBuilder: FormBuilder,
               private auth: AuthService) { }
@@ -31,16 +32,19 @@ export class EvaluationFormComponent implements OnInit {
   }
 
   submit() {
-    this.isSubmit = true;
-    console.log(this.evaluationForm.value);
-    console.log(this.keywords);
-
+    // enable spinner
+    this.auth.setIsShowSpinner(true)
+    this.showSpinner = this.auth.getIsShowSpinner()
     this.auth.send_get_request(
       this.evaluationForm.value.id, this.evaluationForm.value.questionNumber, this.evaluationForm.value.question, this.evaluationForm.value.marks,
       this.evaluationForm.value.modelAnswer, this.evaluationForm.value.studentAnswer, this.keywords
     ).subscribe(response => {
-      console.log(response);
-      this.results = response
+      this.auth.setData(response);
+      this.results = this.auth.getData();
+      // disable spinner
+      this.auth.setIsShowSpinner(false)
+      this.showSpinner = this.auth.getIsShowSpinner()
+      this.isSubmit = true;
     })
   }
 
@@ -55,8 +59,9 @@ export class EvaluationFormComponent implements OnInit {
 
   onKeywordsSetKeydown() {
     if (this.keywordSet == "" || this.keywordSet == null) return;
-    this.keywords.push(this.keywordSet);
-    this.keywordSet = "";
+    if (!this.keywords.includes(this.keywordSet.toLowerCase())) {
+      this.keywords.push(this.keywordSet.toLowerCase());
+      this.keywordSet = "";}
   }
 
   scroll(el: HTMLElement) {

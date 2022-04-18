@@ -20,3 +20,9 @@ th{
   background-color: #F5CD6D;
   border-radius: 10px;
 }
+
+.keywords{
+  display:flex;
+  flex-wrap: wrap;
+  align-content: center;
+}

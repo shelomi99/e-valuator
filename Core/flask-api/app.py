@@ -14,6 +14,7 @@ CORS(app, resources={r"/": {"origins": ""}})
 @cross_origin()
 def get_form_data():
     keywords = []
+    incorrect_questions = []
     id = request.args.get('id')
     question_number = request.args.get('questionNumber')
     question = request.args.get('question')
@@ -31,18 +32,21 @@ def get_form_data():
     # calculating string similarity
     string_similarity = stringSimilarity(model_answer, student_answer)
     # calculating semantic similarity
-    semantic_similarity = generate_knowledge_graph_similarity(model_answer, student_answer, 10, 1)
+    semantic_similarity = generate_knowledge_graph_similarity(model_answer, student_answer, question_number, id)
     if keyword_similarity_score == 0 and string_similarity == 0:
         semantic_similarity = 0
     mark_percentage = keyword_similarity_score + string_similarity + semantic_similarity
     rounded_percentage, final_mark = calculate_final_score(mark_percentage, marks_allocated)
+    if mark_percentage < 30:
+        incorrect_questions.append(question)
     output_values = jsonify(required_keywords=required_keywords,
                             matched_keyword=matched_keyword,
                             keyword_similarity_score=keyword_similarity_score,
                             string_similarity_score=string_similarity,
                             semantic_similarity_score=semantic_similarity,
                             total_mark_percentage=mark_percentage,
-                            final_mark=final_mark)
+                            final_mark=final_mark,
+                            incorrect_questions=incorrect_questions)
     return output_values
 
 

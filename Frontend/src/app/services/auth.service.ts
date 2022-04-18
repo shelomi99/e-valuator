@@ -5,8 +5,24 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class AuthService {
-
   ROOT_URL = 'http://localhost:5000';
+  private evaluationResults: any;
+  private showSpinner: boolean = false;
+
+  setData(data:any){
+    this.evaluationResults = data;
+  }
+
+  getData():any{
+    return this.evaluationResults;
+  }
+
+  setIsShowSpinner(value: boolean) {
+    this.showSpinner = value;
+  }
+  getIsShowSpinner(): boolean {
+    return this.showSpinner;
+  }
 
   constructor(private http: HttpClient) { }
 

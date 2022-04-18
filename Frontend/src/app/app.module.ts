@@ -4,11 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EvaluationFormComponent } from './evaluation-form/evaluation-form.component';
-import {NgbAlertModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgbAlertModule, NgbModule, } from "@ng-bootstrap/ng-bootstrap";
 import { FeedbackComponent } from './feedback/feedback.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ViewReportComponent } from './view-report/view-report.component';
 import {HttpClientModule} from "@angular/common/http";
+import {AuthService} from "./services/auth.service";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import {HttpClientModule} from "@angular/common/http";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 
 })

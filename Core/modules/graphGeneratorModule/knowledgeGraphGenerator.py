@@ -47,8 +47,7 @@ def generate_knowledge_graph_similarity(model_answer, student_answer, question_n
     except Exception as e:
         print("Exception when calling stlabToolsFredGet: %s\n" % e)
 
-    filename = str(student_id) + "_" + str(question_no)
-    filename = filename + "_model" + ".owl"
+    filename = str(question_no) + "_model" + ".owl"
     complete_file_name = os.path.join('C:\\Shelomi\\Final year\\E-Valuator\\e-valuator\\Core\\modules\\graphGeneratorModule\\rdfFiles\\modelAnswers', filename)
     file = open(complete_file_name, 'wb')
 
