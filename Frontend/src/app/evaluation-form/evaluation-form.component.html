@@ -1,4 +1,4 @@
-<div class="input-form shadow-md mt-5 pt-3">
+<div class="input-form shadow-md mt-5 pt-3 mb-2">
   <div class="row justify-content-center">
     <div class="col-auto">
       <h2 class="form-label">Automatic Evaluation of Essay Questions</h2>
@@ -84,8 +84,8 @@
             <label for="inputKeywords">Keywords (optional) :</label>
           </div>
           <div class="col-sm-9">
-            <input class="form-control" type="text" id="inputKeywords" placeholder="Enter keywords and hit Enter key" formControlName="keywords"
-                   [(ngModel)]="keywordSet" (keydown.enter)="onKeywordsSetKeydown()"/>
+            <input class="form-control" type="text" id="inputKeywords" #inputKeywords placeholder="Enter keywords and hit Enter key" formControlName="keywords"
+                   (keydown.enter)="onKeywordsSetKeydown()"/>
           </div>
           <div class="row my-1">
             <div class="col-md-3"></div>
@@ -129,13 +129,18 @@
     </form>
     <div class="row my-4">
       <div class="col-sm-12 d-md-flex justify-content-md-end">
-        <button class="btn me-3 mb-3 clear-btn" (click)="clearForm()">Clear Form</button>
-        <button type="submit" class="btn mb-3 me-2 submit-btn" (click)="submit(); scroll(target);" [disabled]="evaluationForm.invalid">Calculate Mark</button>
+        <button class="btn me-3 mb-3 clear-btn" (click)="clearForm()" [disabled]="showSpinner">Clear Form</button>
+        <button type="submit" class="btn mb-3 me-2 submit-btn" (click)="submit(); scroll(target);" [disabled]="evaluationForm.invalid || showSpinner">Calculate Similarity</button>
       </div>
     </div>
   </div>
+  <div class="error fw-bold">
+    <div class="mb-2 fs-2" *ngIf="isError">
+      Error has occurred, Please try again
+    </div>
+  </div>
   <div>
-    <div class="spinner" *ngIf="showSpinner">
+    <div class="spinner" *ngIf="showSpinner && !isError">
       <div class="bounce1"></div>
       <div class="bounce2"></div>
       <div class="bounce3"></div>
@@ -143,6 +148,6 @@
   </div>
 </div>
 <div #target>
-  <app-feedback *ngIf="isSubmit"></app-feedback>
+  <app-feedback *ngIf="isSubmit && disable" [formGroup]="evaluationForm"></app-feedback>
 </div>
 

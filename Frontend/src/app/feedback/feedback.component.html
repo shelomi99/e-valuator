@@ -8,11 +8,21 @@
     <table class="table table-bordered">
       <tbody>
       <tr>
+        <th scope="row">Student ID</th>
+        <td class="fw-bold">{{evaluationForm.controls.id.value}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Question number</th>
+        <td class="fw-bold">{{evaluationForm.controls.questionNumber.value}}</td>
+      </tr>
+      <tr>
         <th scope="row">Target Keywords<p>(matched keywords are shown in green)</p></th>
-        <td class="keywords">
-          <div *ngFor="let keyword of resultsArray.required_keywords">
-            <button *ngIf="resultsArray.matched_keyword.includes(keyword)" type="button" class="btn btn-success me-2 mb-1">{{keyword}}</button>
-            <button *ngIf="!resultsArray.matched_keyword.includes(keyword)" type="button" class="btn btn-outline-primary me-2 mb-1">{{keyword}}</button>
+        <td>
+          <div class="keywords">
+            <div *ngFor="let keyword of resultsArray.required_keywords">
+              <button *ngIf="resultsArray.matched_keyword.includes(keyword)" class="btn btn-success me-2 mb-1 noHover">{{keyword}}</button>
+              <button *ngIf="!resultsArray.matched_keyword.includes(keyword)" type="button" class="btn btn-outline-primary me-2 mb-1 noHover">{{keyword}}</button>
+            </div>
           </div>
         </td>
       </tr>
@@ -20,27 +30,27 @@
         <th scope="row">Similarity Score values</th>
         <td>
           <div>
-            <p>Keyword Similarity Score: {{resultsArray.keyword_similarity_score}}</p>
-            <p>String Similarity Score: {{resultsArray.string_similarity_score}}</p>
-            <p>Semantic Similarity Score: {{resultsArray.semantic_similarity_score}}</p>
+            <p>Keyword Similarity Score: <span class="fw-bold">{{resultsArray.keyword_similarity_score}}/20</span></p>
+            <p>String Similarity Score: <span class="fw-bold">{{resultsArray.string_similarity_score}}/10</span></p>
+            <p>Graph Based Similarity Score: <span class="fw-bold">{{resultsArray.semantic_similarity_score}}/70</span></p>
           </div>
         </td>
       </tr>
       <tr>
         <th scope="row">Final Score</th>
-        <td>{{resultsArray.final_mark}}</td>
+        {{evaluationResults.marks}}
+        <td class="fw-bold">{{resultsArray.final_mark}}/ {{evaluationForm.controls.marks.value}}</td>
       </tr>
       </tbody>
     </table>
   </div>
   <div class="feedback m-4">
-    <h5>General Feedback</h5>
-    <p class="fw-bold">Questions which needs improvements</p>
-    <p>{{resultsArray.incorrect_questions}}</p>
+    <h5>General Feedback on the answer</h5>
+    <p>{{feedback}}</p>
   </div>
   <div class="row m-4">
     <div class="submit d-md-flex justify-content-md-end">
-      <button type="submit" class="btn me-3">Add to Student Report</button>
+      <button type="submit" class="btn me-3" (click)="addResult()">Add to Student Report</button>
       <button type="submit" class="btn" (click)="scrollToTop()">Recalculate Mark</button>
     </div>
   </div>

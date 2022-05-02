@@ -32,4 +32,23 @@ export class AuthService {
       '&modelAnswer=' + modelAnswer + '&studentAnswer=' + studentAnswer + '&keywords=' + keywords, {responseType: 'text'}
     )
   }
+
+  add_result_get_request(studentId: number, questionNumber: number, question: string, givenMarks: number, marksAllocated: string){
+    return this.http.get(
+      this.ROOT_URL + '/add' + '?id=' + studentId + '&questionNumber=' + questionNumber + '&question=' + question + '&givenMarks=' + givenMarks +
+      '&marksAllocated=' + marksAllocated, {responseType: 'text'}
+    )
+  }
+
+  get_ids_request(){
+    return this.http.get(
+      this.ROOT_URL + '/get' , {responseType: 'json'}
+    )
+  }
+
+  get_results_request(studentId: number){
+    return this.http.get(
+      this.ROOT_URL + '/get-marks' + '?id=' + studentId  , {responseType: 'text'}
+    )
+  }
 }

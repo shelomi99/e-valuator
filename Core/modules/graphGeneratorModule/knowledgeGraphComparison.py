@@ -69,7 +69,7 @@ def knowledgeGraphSimialrityRatio(server_url, student_answer, model_answer):
         if not token.is_stop:
             student_answer_tokens.append(token.text)
 
-    for token in student_answer_tokens:
+    for token in set(student_answer_tokens):
         token = formatToken(str(token))
         query = """
         SELECT

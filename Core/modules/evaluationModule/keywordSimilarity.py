@@ -25,7 +25,6 @@ def get_fuzzy_keyword_similarity(student_answer=None, model_answer=None, diction
 
     if is_keywords_empty:
         dictionary = generateKeywords(model_answer)
-
     doc = nlp(student_answer)
     tokens = []
     keyword_similarity = []
@@ -35,28 +34,20 @@ def get_fuzzy_keyword_similarity(student_answer=None, model_answer=None, diction
     keyword_similarity_score = 0
     for token in doc:
         if not token.is_stop:
-            tokens.append(token.text)
+            tokens.append(token.text.lower())
 
     # removing duplicates in the token list
     cleaned_token_list = (list(dict.fromkeys(tokens)))
-
     for token in cleaned_token_list:
         if token and dictionary:
             if utils.full_process(token):
                 keyword_similarity.append(process.extractBests(token, dictionary, scorer=ratio, score_cutoff=70))
         else:
             return []
-
     for item in keyword_similarity:
         for i in item:
             matched_num_of_keywords += 1
 
-    try:
-        # 20% of the total score is allocated for the keyword similarity score
-        keyword_similarity_score = "{:.2f}".format((matched_num_of_keywords / expected_num_of_keywords) * 20)
-    except ZeroDivisionError:
-        keyword_similarity_score = 0
-    #
     # print("expected_num_of_keywords =", expected_num_of_keywords)
     # print("matched_num_of_keywords =", matched_num_of_keywords)
     # print("keyword_similarity_score = ", keyword_similarity_score + "/20")
@@ -64,6 +55,12 @@ def get_fuzzy_keyword_similarity(student_answer=None, model_answer=None, diction
     similarity = [x for x in keyword_similarity if x]
     for x in range(len(similarity)):
         matched_keywords.append(similarity[x][0][0])
+
+    try:
+        # 20% of the total score is allocated for the keyword similarity score
+        keyword_similarity_score = "{:.2f}".format((len(matched_keywords) / expected_num_of_keywords) * 20)
+    except ZeroDivisionError:
+        keyword_similarity_score = 0
 
     return dictionary, matched_keywords, float(keyword_similarity_score)
 

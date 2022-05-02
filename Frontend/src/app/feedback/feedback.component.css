@@ -26,3 +26,7 @@ th{
   flex-wrap: wrap;
   align-content: center;
 }
+
+.noHover{
+  pointer-events: none;
+}
