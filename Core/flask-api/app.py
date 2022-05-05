@@ -27,6 +27,17 @@ class Results(db.Model):
     mark_allocated = db.Column(db.String)
 
 
+def validate_mark(keyword_similarity_score, string_similarity, semantic_similarity):
+    if keyword_similarity_score == 0 and string_similarity == 0:
+        string_similarity = 0
+    if keyword_similarity_score == 0 and semantic_similarity == 0:
+        string_similarity = 0
+    if keyword_similarity_score == 20 and semantic_similarity == 40:
+        string_similarity = 40
+
+    return keyword_similarity_score, string_similarity, semantic_similarity
+
+
 @app.route('/', methods=["GET"])
 @cross_origin()
 def get_form_data():
@@ -50,19 +61,17 @@ def get_form_data():
     string_similarity = stringSimilarity(model_answer, student_answer)
     # calculating semantic similarity
     semantic_similarity = generate_knowledge_graph_similarity(model_answer, student_answer, question_number, id)
-    if keyword_similarity_score == 0 and string_similarity == 0:
-        semantic_similarity = 0
-    if keyword_similarity_score == 20 and semantic_similarity == 70:
-        string_similarity = 10
-    mark_percentage = keyword_similarity_score + string_similarity + semantic_similarity
+
+    val_keyword_similarity_score, val_string_similarity, val_semantic_similarity = validate_mark(keyword_similarity_score, string_similarity, semantic_similarity)
+    mark_percentage = val_keyword_similarity_score + val_string_similarity + val_semantic_similarity
     rounded_percentage, final_mark = calculate_final_score(mark_percentage, marks_allocated)
     if mark_percentage < 30:
         incorrect_questions.append(question)
     output_values = jsonify(required_keywords=required_keywords,
                             matched_keyword=matched_keyword,
-                            keyword_similarity_score=keyword_similarity_score,
-                            string_similarity_score=string_similarity,
-                            semantic_similarity_score=semantic_similarity,
+                            keyword_similarity_score=val_keyword_similarity_score,
+                            string_similarity_score=val_string_similarity,
+                            semantic_similarity_score=val_semantic_similarity,
                             total_mark_percentage=mark_percentage,
                             final_mark=final_mark,
                             incorrect_questions=incorrect_questions,

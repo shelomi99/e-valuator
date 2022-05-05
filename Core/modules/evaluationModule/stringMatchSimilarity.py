@@ -91,7 +91,7 @@ def stringSimilarity(model_answer, student_answer):
         m = max(len(tokens1), len(tokens2)) / 2
         similarity = sim_mag / m
 
-    string_matching_similarity = "{:.2f}".format(similarity * 10)
+    string_matching_similarity = "{:.2f}".format(similarity * 40)
     # 20% of the total score is allocated for the keyword similarity score
     return float(string_matching_similarity)
 

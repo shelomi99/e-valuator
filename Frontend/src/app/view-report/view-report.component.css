@@ -8,11 +8,6 @@
   border-top-color: #22577E;
 }
 
-.id button{
-  width: 12%;
-  color: black;
-}
-
 .id p{
   display: flex;
   flex-direction: column;
@@ -35,6 +30,10 @@
   color: white;
 }
 
+.dropdown-btn{
+  color: black;
+}
+
 .header{
   color: white;
 }
@@ -52,6 +51,7 @@
 
 .total_mark{
   margin-top: 5%;
+  margin-left: 15%;
 }
 
 .table{
@@ -60,6 +60,19 @@
 }
 
 .table-div{
+  display: flex;
+  justify-content: center;
+}
+
+.border-dark{
+  border-color: #747474 !important;
+}
+
+.id-btn{
+  display: grid !important;
+}
+
+.report-heading{
   display: flex;
   justify-content: center;
 }

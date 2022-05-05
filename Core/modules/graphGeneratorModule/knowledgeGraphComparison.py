@@ -91,8 +91,7 @@ def knowledgeGraphSimialrityRatio(server_url, student_answer, model_answer):
 
     # print(words_present)
     # print(total_words)
-    semantic_mark = "{:.2f}".format((words_present / total_words) * 70)
-    # print('Final mark', float(semantic_mark), '/70')
+    semantic_mark = "{:.2f}".format((words_present / total_words) * 40)
 
     return float(semantic_mark)
 
