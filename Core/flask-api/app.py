@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from Core.modules.evaluationModule.finalScoreCalculation import calculate_final_score
 from Core.modules.evaluationModule.keywordSimilarity import get_fuzzy_keyword_similarity
-from Core.modules.evaluationModule.stringMatchSimilarity import stringSimilarity
+from Core.modules.evaluationModule.stringMatchSimilarity import get_string_similarity
 from Core.modules.graphGeneratorModule.knowledgeGraphGenerator import generate_knowledge_graph_similarity
 
 app = Flask(__name__)
@@ -58,7 +58,7 @@ def get_form_data():
     required_keywords, matched_keyword, keyword_similarity_score = get_fuzzy_keyword_similarity(student_answer,
                                                                                                 model_answer, keywords)
     # calculating string similarity
-    string_similarity = stringSimilarity(model_answer, student_answer)
+    string_similarity = get_string_similarity(model_answer, student_answer)
     # calculating semantic similarity
     semantic_similarity = generate_knowledge_graph_similarity(model_answer, student_answer, question_number, id)
 

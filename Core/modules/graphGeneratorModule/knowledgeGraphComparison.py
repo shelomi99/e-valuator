@@ -1,3 +1,5 @@
+import re
+
 import requests
 import spacy
 from SPARQLWrapper import SPARQLWrapper, JSON
@@ -43,6 +45,9 @@ def formatToken(token):
     formatToken = formatToken.replace("'", "")
     formatToken = formatToken.replace("’", "")
     formatToken = formatToken.replace(".", "")
+    formatToken = formatToken.replace("/", "")
+    formatToken = formatToken.replace("-", "")
+    formatToken = formatToken.replace("\\", "")
     # Return formatedLiteral
     return formatToken
 

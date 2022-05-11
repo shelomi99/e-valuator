@@ -3,16 +3,16 @@ import spacy
 nlp = spacy.load('en_core_web_md')
 
 
-def mainPreprocess(text):
+def main_pre_preprocess(text):
     # Extracting the sentences
-    extractSentences(text)
+    extract_sentences(text)
     # Extracting tokens of the text
-    extractTokens(text)
+    extract_tokens(text)
     # Extracting the pos tags and named entities
-    extractPosAndNamedEntity(text)
+    extract_pos_and_namedentity(text)
 
 
-def extractTokens(text):
+def extract_tokens(text):
     doc = nlp(text)
     tokens = []
 
@@ -23,7 +23,7 @@ def extractTokens(text):
     return tokens
 
 
-def extractPosAndNamedEntity(text):
+def extract_pos_and_namedentity(text):
     doc = nlp(text)
     posTags = []
     nerTags = []
@@ -39,7 +39,7 @@ def extractPosAndNamedEntity(text):
     return nerTags
 
 
-def extractSentences(text):
+def extract_sentences(text):
     doc = nlp(text)
     sentences = ""
     sentences = [sent.text for sent in doc.sents]

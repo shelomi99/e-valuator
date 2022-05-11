@@ -8,7 +8,7 @@ nlp = spacy.load('en_core_web_md')
 
 
 # keyword generation is executed when the evaluator hasn't included any keywords in the marking scheme
-def generateKeywords(model_answer):
+def generate_keywords(model_answer):
     kw_model = KeyBERT()
     # extracting the top 5 keywords
     model_keywords = kw_model.extract_keywords(model_answer, keyphrase_ngram_range=(1, 1),
@@ -16,15 +16,15 @@ def generateKeywords(model_answer):
 
     # removing duplicate keywords
     extracted_keywords = list(dict(model_keywords).keys())
+    print(extracted_keywords)
     return extracted_keywords
 
 
 def get_fuzzy_keyword_similarity(student_answer=None, model_answer=None, dictionary=None):
     # check if keyword list is empty
     is_keywords_empty = not (bool(dictionary))
-
     if is_keywords_empty:
-        dictionary = generateKeywords(model_answer)
+        dictionary = generate_keywords(model_answer)
     doc = nlp(student_answer)
     tokens = []
     keyword_similarity = []
@@ -32,6 +32,7 @@ def get_fuzzy_keyword_similarity(student_answer=None, model_answer=None, diction
     expected_num_of_keywords = len(dictionary)
     matched_num_of_keywords = 0
     keyword_similarity_score = 0
+    # extracting tokens
     for token in doc:
         if not token.is_stop:
             tokens.append(token.text.lower())
@@ -48,9 +49,6 @@ def get_fuzzy_keyword_similarity(student_answer=None, model_answer=None, diction
         for i in item:
             matched_num_of_keywords += 1
 
-    # print("expected_num_of_keywords =", expected_num_of_keywords)
-    # print("matched_num_of_keywords =", matched_num_of_keywords)
-    # print("keyword_similarity_score = ", keyword_similarity_score + "/20")
     # to remove empty lists
     similarity = [x for x in keyword_similarity if x]
     for x in range(len(similarity)):

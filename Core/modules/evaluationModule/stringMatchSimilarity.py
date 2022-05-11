@@ -23,7 +23,7 @@ def total_magnitude(vector):
     return total
 
 
-def similarityVectors(postag1, postag2):
+def similarity_vectors(postag1, postag2):
     # Creating a similarity vectors for the two given sentences. Calculate the max similarity for each word in pos1.
     # This is accomplished by using WordNet definitions of pos tags and determining the path similarity between them.
     global similarity_benchmark
@@ -52,17 +52,17 @@ def similarityVectors(postag1, postag2):
     return similarity_vec
 
 
-def wordSimilarity(tag1, tag2):
+def word_similarity(tag1, tag2):
     # Compare the shortest path between the words in sentences
     postag1 = pos_tag(tag1)
     postag2 = pos_tag(tag2)
-    similarity_vec1 = similarityVectors(postag1, postag2)
-    similarity_vec2 = similarityVectors(postag2, postag1)
+    similarity_vec1 = similarity_vectors(postag1, postag2)
+    similarity_vec2 = similarity_vectors(postag2, postag1)
     return similarity_vec1, similarity_vec2
 
 
 # Calculating the similarity of words in the sentences.
-def stringSimilarity(model_answer, student_answer):
+def get_string_similarity(model_answer, student_answer):
     global similarity_benchmark
     tokens1 = word_tokenize(model_answer)
     tokens2 = word_tokenize(student_answer)
@@ -71,7 +71,7 @@ def stringSimilarity(model_answer, student_answer):
     stemmer = PorterStemmer()
     tokens1 = [stemmer.stem(t) for t in tokens1]
     tokens2 = [stemmer.stem(t) for t in tokens2]
-    sim_vec1, sim_vec2 = wordSimilarity(tokens1, tokens2)
+    sim_vec1, sim_vec2 = word_similarity(tokens1, tokens2)
     sim_mag1 = total_magnitude(sim_vec1)
     sim_mag2 = total_magnitude(sim_vec2)
     sim_mag = sim_mag1 * sim_mag2
@@ -91,8 +91,8 @@ def stringSimilarity(model_answer, student_answer):
         m = max(len(tokens1), len(tokens2)) / 2
         similarity = sim_mag / m
 
+    # 40% of the total score is allocated for the string similarity score
     string_matching_similarity = "{:.2f}".format(similarity * 40)
-    # 20% of the total score is allocated for the keyword similarity score
     return float(string_matching_similarity)
 
 
