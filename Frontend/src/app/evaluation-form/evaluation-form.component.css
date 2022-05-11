@@ -1,0 +1,92 @@
+.input-form{
+  background-color: #ffffff;
+  margin-left: 20%;
+  margin-right: 15%;
+  border-radius: 15px;
+  border-top-style: solid;
+  border-top-width: 5px;
+  border-top-color: #22577E;
+}
+
+.header{
+  display: flex;
+}
+
+.label{
+  text-align: end;
+}
+
+.form {
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.submit-btn{
+  background-color: #22577E;
+  color: white;
+  border-radius: 10px;
+}
+
+#inputStudentAnswer, #inputModelAnswer{
+  overflow: hidden;
+}
+
+.roundedcorner {
+  margin: 3px;
+  padding: 5px 10px;
+  float: left;
+  border-radius: 20px;
+  background-color: #dee1e3;
+}
+
+.clear-btn{
+  background-color: #F5CD6D;
+  border-radius: 10px;
+  color: black;
+}
+
+.spinner {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin-left: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.spinner div {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: black;
+  animation: sk-bouncedelay 1.4s infinite;
+}
+.spinner .bounce1 {
+  animation-delay: -0.32s;
+}
+.spinner .bounce2 {
+  animation-delay: -0.16s;
+}
+@keyframes sk-bouncedelay {
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.error{
+  display: flex;
+  justify-content: center;
+}
+
+.form-check{
+  margin-left: 24.5%;
+}

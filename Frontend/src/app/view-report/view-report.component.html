@@ -1,0 +1,57 @@
+<div class="results shadow-md mt-5 p-3">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <h2 class="form-label">Student Reports</h2>
+    </div>
+  </div>
+  <div class="id m-4">
+    <p>Choose the student ID which you want marks of</p>
+    <div class="id-box">
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary dropdown-btn" id="dropdownBasic1" ngbDropdownToggle>Choose ID</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button *ngFor="let id of idList" type="button" ngbDropdownItem (click)="getResultsFromId(id) || openStudentResultDiv()">{{id}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container table-responsive py-5" *ngIf="openStudentResult">
+    <h4 class="report-heading">Student  {{currentId}} Report</h4>
+    <br>
+    <div class="border border-dark rounded">
+    <div class="table-div mt-4">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+        <tr class="header bg-dark">
+          <th scope="col">Question Number</th>
+          <th scope="col">Calculated Mark</th>
+          <th scope="col">Allocated Mark</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor=" let mark of marksArray">
+          <th scope="row">{{mark.question_number}}</th>
+          <td>{{mark.given_mark}}</td>
+          <td>{{mark.allocated_mark}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="total_mark fs-5">
+        <div class="row">
+          <div class="col-sm-2"><h5>Final Mark  -</h5></div>
+          <div class="label col-sm-2">{{finalScore}} / {{totalScore}}</div>
+        </div>
+      <div class="row mt-4" *ngIf="checkPercentage">
+        <div class="label col-sm-2 fw-bold"><h5>Percentage -</h5></div>
+        <div class="label col-sm-2">{{finalPercentage}}%</div>
+      </div>
+    </div>
+    <div class="submit">
+      <button type="submit" class="btn mb-3 me-2 percentage-btn" (click)="calculatePercentage()">Calculate Percentage</button>
+    </div>
+  </div>
+  </div>
+
+</div>

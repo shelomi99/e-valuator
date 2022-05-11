@@ -1,0 +1,78 @@
+.results{
+  background-color: #ffffff;
+  margin-left: 20%;
+  margin-right: 15%;
+  border-radius: 15px;
+  border-top-style: solid;
+  border-top-width: 5px;
+  border-top-color: #22577E;
+}
+
+.id p{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.id-box{
+  display: flex;
+  justify-content: center;
+}
+
+.id-box .btn{
+  background-color: white;
+  border-color: #22577E;
+}
+
+.id-box .btn:hover{
+  background-color: #22577E;
+  color: white;
+}
+
+.dropdown-btn{
+  color: black;
+}
+
+.header{
+  color: white;
+}
+
+.submit{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.percentage-btn{
+  background-color: #22577E;
+  color: white;
+  border-radius: 10px;
+}
+
+.total_mark{
+  margin-top: 5%;
+  margin-left: 15%;
+}
+
+.table{
+  width: 70%;
+  text-align: center;
+}
+
+.table-div{
+  display: flex;
+  justify-content: center;
+}
+
+.border-dark{
+  border-color: #747474 !important;
+}
+
+.id-btn{
+  display: grid !important;
+}
+
+.report-heading{
+  display: flex;
+  justify-content: center;
+}

@@ -1,23 +1,38 @@
+import re
+
 import requests
 import spacy
 from SPARQLWrapper import SPARQLWrapper, JSON
 
-MODEL_DATASET_NAME = "ds"
-STUDENTL_DATASET_NAME = "test"
-
-# Url of the Apache jena fuseki server
-FUSEKI_SERVER_URL_MODEL = "http://localhost:3030/" + MODEL_DATASET_NAME
-FUSEKI_SERVER_URL_STUDENT = "http://localhost:3030/" + STUDENTL_DATASET_NAME
 model_answer_spo = []
 student_answer_spo = []
 model_answer_spo_list = []
 student_answer_spo_list = []
 
-# Upload generated RDF graph to the fuseki server
-serviceURL = FUSEKI_SERVER_URL_MODEL
-data = open('rdfFiles/test.owl').read()
-headers = {'Content-Type': 'application/rdf+xml;charset=utf-8'}
-request = requests.post(serviceURL, data=data, headers=headers)
+
+def upload_rdf_file(complete_file_name, question_no, student_id, model_answer, student_answer):
+    dataset_name = str(question_no) + "_model"
+    # Url of the Apache jena fuseki server
+    FUSEKI_SERVER_URL = "http://localhost:3030/" + dataset_name
+
+    serviceURL = FUSEKI_SERVER_URL
+    add_data = open(complete_file_name).read()
+    add_data_headers = {'Content-Type': 'application/rdf+xml;charset=utf-8'}
+    create_dataset_header = {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+    }
+    create_data = {
+        'dbName': dataset_name,
+        'dbType': 'mem',
+    }
+    # create new dataset
+    response = requests.post('http://localhost:3030/$/datasets', headers=create_dataset_header, data=create_data)
+    # Upload generated RDF graph to the fuseki server
+    request = requests.post(serviceURL, data=add_data, headers=add_data_headers)
+    # get knowledge graph similarity
+    semantic_similarity_score = knowledgeGraphSimialrityRatio(serviceURL, student_answer, model_answer)
+
+    return semantic_similarity_score
 
 
 def formatToken(token):
@@ -30,8 +45,60 @@ def formatToken(token):
     formatToken = formatToken.replace("'", "")
     formatToken = formatToken.replace("’", "")
     formatToken = formatToken.replace(".", "")
+    formatToken = formatToken.replace("/", "")
+    formatToken = formatToken.replace("-", "")
+    formatToken = formatToken.replace("\\", "")
     # Return formatedLiteral
     return formatToken
+
+
+def knowledgeGraphSimialrityRatio(server_url, student_answer, model_answer):
+    nlp = spacy.load('en_core_web_md')
+    model_answer_tokens = []
+    student_answer_tokens = []
+    words_present = 0
+    total_words = 0
+    answer_spo_list = []
+
+    model_answer_doc = nlp(model_answer)
+    for token_model in model_answer_doc:
+        if not token_model.is_stop:
+            model_answer_tokens.append(token_model.text)
+
+    total_words = len(set(model_answer_tokens))
+    # Url of the Apache jena fuseki server
+    FUSEKI_SERVER_URL = server_url
+
+    student_answer_doc = nlp(student_answer)
+    for token in student_answer_doc:
+        if not token.is_stop:
+            student_answer_tokens.append(token.text)
+
+    for token in set(student_answer_tokens):
+        token = formatToken(str(token))
+        query = """
+        SELECT
+        ?subject ?predicate ?object
+        WHERE {{ 
+            ?subject ?predicate ?object
+            .FILTER regex(str(?subject), "{token}", "i") 
+      .}}
+      """
+
+        sparql = SPARQLWrapper(FUSEKI_SERVER_URL)
+        sparql.setQuery(query.format(token=token))
+        sparql.setReturnFormat(JSON)
+        results = sparql.query()
+        converted = results.convert()
+
+        if converted["results"]["bindings"]:
+            words_present += 1
+
+    # print(words_present)
+    # print(total_words)
+    semantic_mark = "{:.2f}".format((words_present / total_words) * 40)
+
+    return float(semantic_mark)
 
 
 def rdf_triple_extraction(server_url, spos, spo_list):
@@ -55,59 +122,17 @@ def rdf_triple_extraction(server_url, spos, spo_list):
     return spos
 
 
-model_rdf_list = rdf_triple_extraction(FUSEKI_SERVER_URL_MODEL, model_answer_spo, model_answer_spo_list)
-student_rdf_list = rdf_triple_extraction(FUSEKI_SERVER_URL_STUDENT, student_answer_spo, student_answer_spo_list)
-
-print("model answer class list", model_rdf_list)
-print("student answer class list", student_rdf_list)
-
-# identify common classes between thw two corpses
-common_classes = set(model_rdf_list).intersection(student_rdf_list)
+# convert a list of tokens to a string
+def to_str(tokens):
+    return ' '.join([item.text for item in tokens])
 
 
-def knowledgeGraphSimialrityRatio(text, ):
-    # convert a list of tokens to a string
-    def to_str(tokens):
-        return ' '.join([item.text for item in tokens])
-
-    nlp = spacy.load('en_core_web_md')
-    # declaring the students scheme
-    text = "A dominant allele is the allele that is always expressed while the recessive allele is only expressed when it has 2 copies of the allele"
-    tokens = []
-    words_present = 0
-    total_words = 0
-    answer_spo_list = []
-
-    Doc = nlp(text)
-    for token in Doc:
-        if not token.is_stop:
-            tokens.append(token.text)
-
-    total_words = len(set(tokens))
-    # Name of dataset
-    DATASET_NAME = "ds"
-    # Url of the Apache jena fuseki server
-    FUSEKI_SERVER_URL = "http://localhost:3030/" + DATASET_NAME
-
-    for token in set(tokens):
-        token = formatToken(token)
-        query = """
-        SELECT
-        ?subject ?predicate ?object
-        WHERE {{ 
-            ?subject ?predicate ?object
-            .FILTER regex(str(?subject), "{token}", "i") 
-      .}}
-      """
-
-        sparql = SPARQLWrapper(FUSEKI_SERVER_URL)
-        sparql.setQuery(query.format(token=token))
-        sparql.setReturnFormat(JSON)
-        results = sparql.query()
-        converted = results.convert()
-
-        if converted["results"]["bindings"]:
-            words_present += 1
-
-    print(words_present)
-    print(total_words)
+# def identifyCommonClasses():
+#     model_rdf_list = rdf_triple_extraction(FUSEKI_SERVER_URL_MODEL, model_answer_spo, model_answer_spo_list)
+#     student_rdf_list = rdf_triple_extraction(FUSEKI_SERVER_URL_STUDENT, student_answer_spo, student_answer_spo_list)
+#
+#     print("model answer class list", model_rdf_list)
+#     print("student answer class list", student_rdf_list)
+#
+#     # identify common classes between the two corpses
+#     common_classes = set(model_rdf_list).intersection(student_rdf_list)

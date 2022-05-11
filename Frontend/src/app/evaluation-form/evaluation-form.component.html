@@ -1,0 +1,153 @@
+<div class="input-form shadow-md mt-5 pt-3 mb-2">
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <h2 class="form-label">Automatic Evaluation of Essay Questions</h2>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <p class="form-text fs-5">Add Marking Criteria</p>
+    </div>
+  </div>
+  <div class="form">
+    <form [formGroup]="evaluationForm">
+      <div class="container">
+        <div class="row my-4">
+          <div class="label col-sm-3">
+            <label for="inputStudentID">Student ID :</label>
+          </div>
+          <div class="col-sm-3">
+            <input type="number" class="form-control" id="inputStudentID" placeholder="Enter Student ID" formControlName="id"
+                   [ngClass]="(evaluationForm.controls.id.touched ||
+                   evaluationForm.controls.id.dirty)  &&
+                   evaluationForm.controls.id.errors ? 'is-invalid': '' ||
+                   ((evaluationForm.controls.id.touched ||
+                   evaluationForm.controls.id.dirty) && !evaluationForm.controls.id.invalid)
+                   ? 'is-valid' : ''"
+            />
+            <div class="invalid-feedback">
+              {{ evaluationForm.controls.id.hasError('required') ? 'Student ID is required' : ""}}
+            </div>
+          </div>
+          <div class="label col-sm-3">
+            <label for="inputQuestionNumber">Question Number :</label>
+          </div>
+          <div class="col-sm-3">
+            <input type="number" class="form-control" id="inputQuestionNumber" placeholder="Question Number" formControlName="questionNumber"
+                   [ngClass]="(evaluationForm.controls.questionNumber.touched ||
+                   evaluationForm.controls.questionNumber.dirty)  &&
+                   evaluationForm.controls.questionNumber.errors? 'is-invalid': '' ||
+                   ((evaluationForm.controls.questionNumber.touched ||
+                   evaluationForm.controls.questionNumber.dirty) && !evaluationForm.controls.questionNumber.invalid)
+                   ? 'is-valid' : ''"
+            />
+            <div class="invalid-feedback">Question number is required</div>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="label col-sm-3">
+            <label for="inputQuestion">Question :</label>
+          </div>
+          <div class="col-sm-9">
+            <input type="text" class="form-control " id="inputQuestion" placeholder="Enter Question" formControlName="question"
+            [ngClass]="(evaluationForm.controls.question.touched ||
+                   evaluationForm.controls.question.dirty)  &&
+                   evaluationForm.controls.question.errors? 'is-invalid': '' ||
+                   ((evaluationForm.controls.question.touched ||
+                   evaluationForm.controls.question.dirty) && !evaluationForm.controls.question.invalid)
+                   ? 'is-valid' : ''"
+            />
+            <div class="invalid-feedback">Question is required</div>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="label col-sm-3">
+            <label for="inputMarksAllocated">Marks Allocated :</label>
+          </div>
+          <div class="col-sm-3">
+            <input type="number" class="form-control" id="inputMarksAllocated" placeholder="Marks Allocated" formControlName="marks"
+                   [ngClass]="(evaluationForm.controls.marks.touched ||
+                   evaluationForm.controls.marks.dirty)  &&
+                   evaluationForm.controls.marks.errors ? 'is-invalid': '' ||
+                   ((evaluationForm.controls.marks.touched ||
+                   evaluationForm.controls.marks.dirty) && !evaluationForm.controls.marks.invalid)
+                   ? 'is-valid' : ''"
+            />
+            <div class="invalid-feedback">
+              {{ evaluationForm.controls.marks.hasError('required') ? 'Mark is required' : ""}}
+              {{ evaluationForm.controls.marks.hasError('max') ||  evaluationForm.controls.marks.hasError('min') ? 'Should be between(0-100)' : ""}}
+            </div>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="label col-sm-3">
+            <label for="inputKeywords">Keywords (optional) :</label>
+          </div>
+          <div class="col-sm-9">
+            <input class="form-control" type="text" id="inputKeywords" #inputKeywords placeholder="Enter keywords and hit Enter key" formControlName="keywords"
+                   (keydown.enter)="onKeywordsSetKeydown()"/>
+          </div>
+          <div class="row my-1">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+              <div *ngFor="let keyword of keywords; let i = index" class="roundedcorner">
+                {{keyword}}
+                <i class="fa fa-times" (click)="dropKeyword(i)"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="label col-sm-3">
+            <label for="inputModelAnswer">Model Answer :</label>
+          </div>
+          <div class="col-sm-9">
+            <textarea class="form-control" id="inputModelAnswer" placeholder="Enter Model Answer" formControlName="modelAnswer"
+                      oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+                      [ngClass]="(evaluationForm.controls.modelAnswer.touched || evaluationForm.controls.modelAnswer.dirty)  &&
+                       evaluationForm.controls.modelAnswer.errors? 'is-invalid': '' ||
+                       ((evaluationForm.controls.modelAnswer.touched ||
+                       evaluationForm.controls.modelAnswer.dirty) && !evaluationForm.controls.modelAnswer.invalid) ? 'is-valid' : ''"></textarea>
+            <div class="invalid-feedback">Model answer is required</div>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="label col-sm-3">
+            <label for="inputStudentAnswer">Student Answer :</label>
+          </div>
+          <div class="col-sm-9">
+            <textarea class="form-control" id="inputStudentAnswer" placeholder="Enter Student Answer" formControlName="studentAnswer"
+                      oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+                      [ngClass]="(evaluationForm.controls.studentAnswer.touched || evaluationForm.controls.studentAnswer.dirty)  &&
+                       evaluationForm.controls.studentAnswer.errors? 'is-invalid': '' ||
+                       ((evaluationForm.controls.studentAnswer.touched ||
+                       evaluationForm.controls.studentAnswer.dirty) && !evaluationForm.controls.studentAnswer.invalid) ? 'is-valid' : ''"></textarea>
+            <div class="invalid-feedback">Student answer is required</div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row my-4">
+      <div class="col-sm-12 d-md-flex justify-content-md-end">
+        <button class="btn me-3 mb-3 clear-btn" (click)="clearForm()" [disabled]="showSpinner">Clear Form</button>
+        <button type="submit" class="btn mb-3 me-2 submit-btn" (click)="submit(); scroll(target);" [disabled]="evaluationForm.invalid || showSpinner">Calculate Similarity</button>
+      </div>
+    </div>
+  </div>
+  <div class="error fw-bold">
+    <div class="mb-2 fs-2" *ngIf="isError">
+      Error has occurred, Please try again
+    </div>
+  </div>
+  <div>
+    <div class="spinner" *ngIf="showSpinner && !isError">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+</div>
+<div #target>
+  <app-feedback *ngIf="isSubmit && disable" [formGroup]="evaluationForm"></app-feedback>
+</div>
+

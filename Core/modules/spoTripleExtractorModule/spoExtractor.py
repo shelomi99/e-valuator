@@ -12,10 +12,6 @@ BREAKER_POS = {"CCONJ", "VERB"}
 NEGATIONS = {"no", "not", "n't", "never", "none"}
 spos = []
 
-model_answer = "Oxygen enters the blood through diffusion into the alveoli. This is because alveoli has a high " \
-               "concentration of O2. Blood has a low concentration of O2 so the oxygen diffuses into the blood "
-
-
 # check if the token is a verb  (excluding auxiliary verbs)
 def is_non_aux_verb(tok):
     return tok.pos_ == "VERB" and (tok.dep_ != "aux" and tok.dep_ != "auxpass")
@@ -194,6 +190,7 @@ def get_objs_from_prepositions(deps, is_pas):
                          (tok.pos_ == "PRON" and tok.lower_ == "me") or
                          (is_pas and tok.dep_ == 'pobj')])
     return objs
+
 
 # get all the subject predicate object list from
 def get_spo_triples(text):
