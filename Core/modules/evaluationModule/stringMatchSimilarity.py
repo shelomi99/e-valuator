@@ -64,19 +64,25 @@ def word_similarity(tag1, tag2):
 # Calculating the similarity of words in the sentences.
 def get_string_similarity(model_answer, student_answer):
     global similarity_benchmark
+    # get token lists of two inputs
     tokens1 = word_tokenize(model_answer)
     tokens2 = word_tokenize(student_answer)
+    # removing stopwords from token list
     tokens1 = [word for word in tokens1 if word not in stopwords.words('english')]
     tokens2 = [word for word in tokens2 if word not in stopwords.words('english')]
+    # stemming the tokens
     stemmer = PorterStemmer()
     tokens1 = [stemmer.stem(t) for t in tokens1]
     tokens2 = [stemmer.stem(t) for t in tokens2]
+    # get the shortest paths between the tokens
     sim_vec1, sim_vec2 = word_similarity(tokens1, tokens2)
+    # get the total similarity magnitude
     sim_mag1 = total_magnitude(sim_vec1)
     sim_mag2 = total_magnitude(sim_vec2)
     sim_mag = sim_mag1 * sim_mag2
     sim_constant = 1.8
     above_bench1, above_bench2 = 0, 0
+    # adding benchmarks to the similarity vectors
     for sim in sim_vec1:
         if sim > similarity_benchmark:
             above_bench1 += 1

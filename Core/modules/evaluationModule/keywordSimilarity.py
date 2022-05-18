@@ -16,11 +16,10 @@ def generate_keywords(model_answer):
 
     # removing duplicate keywords
     extracted_keywords = list(dict(model_keywords).keys())
-    print(extracted_keywords)
     return extracted_keywords
 
 
-def get_fuzzy_keyword_similarity(student_answer=None, model_answer=None, dictionary=None):
+def get_fuzzy_keyword_similarity(student_answer, model_answer, dictionary=None):
     # check if keyword list is empty
     is_keywords_empty = not (bool(dictionary))
     if is_keywords_empty:
