@@ -30,7 +30,6 @@ def generate_knowledge_graph_similarity(model_answer, student_answer, question_n
             'accept': 'application/rdf+xml',
             'Authorization': API_KEY,
         }
-
         params = {
             'text': text,
             'prefix': prefix,
@@ -41,9 +40,9 @@ def generate_knowledge_graph_similarity(model_answer, student_answer, question_n
             'textannotation': text_annotation,
             'semantic-subgraph': semantic_subgraph,
         }
-
         response = requests.get('http://wit.istc.cnr.it/stlab-tools/fred', headers=headers, params=params)
         rdf_content = response.content
+
     except Exception as e:
         print("Exception when calling stlabToolsFredGet: %s\n" % e)
 

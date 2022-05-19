@@ -4,6 +4,7 @@ import {EvaluationFormComponent} from "./evaluation-form/evaluation-form.compone
 import {FeedbackComponent} from "./feedback/feedback.component";
 import {ViewReportComponent} from "./view-report/view-report.component";
 
+
 const routes: Routes = [
   {
     path: '',
@@ -16,8 +17,8 @@ const routes: Routes = [
   {
     path: 'report',
     component: ViewReportComponent
-  }
-
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

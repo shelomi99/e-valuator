@@ -11,23 +11,26 @@ student_answer_spo_list = []
 
 
 def upload_rdf_file(complete_file_name, question_no, student_id, model_answer, student_answer):
+    # dataset is named in the format of {questionNumber}_model
     dataset_name = str(question_no) + "_model"
     # Url of the Apache jena fuseki server
     FUSEKI_SERVER_URL = "http://localhost:3030/" + dataset_name
 
     serviceURL = FUSEKI_SERVER_URL
+    # locally saved owl file
     add_data = open(complete_file_name).read()
     add_data_headers = {'Content-Type': 'application/rdf+xml;charset=utf-8'}
     create_dataset_header = {
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
     }
+    # setting fuseki db values
     create_data = {
         'dbName': dataset_name,
         'dbType': 'mem',
     }
     # create new dataset
     response = requests.post('http://localhost:3030/$/datasets', headers=create_dataset_header, data=create_data)
-    # Upload generated RDF graph to the fuseki server
+    # Upload generated OWL file to the fuseki server
     request = requests.post(serviceURL, data=add_data, headers=add_data_headers)
     # get knowledge graph similarity
     semantic_similarity_score = knowledgeGraphSimialrityRatio(serviceURL, student_answer, model_answer)
@@ -35,7 +38,7 @@ def upload_rdf_file(complete_file_name, question_no, student_id, model_answer, s
     return semantic_similarity_score
 
 
-def formatToken(token):
+def format_token(token):
     # Making the literal lower cased
     formatToken = token.lower()
     # Removing all new line and tab chars from literal
@@ -48,6 +51,10 @@ def formatToken(token):
     formatToken = formatToken.replace("/", "")
     formatToken = formatToken.replace("-", "")
     formatToken = formatToken.replace("\\", "")
+    formatToken = formatToken.replace(",", "")
+    formatToken = formatToken.replace("'", "")
+    formatToken = formatToken.replace("(", "")
+    formatToken = formatToken.replace(")", "")
     # Return formatedLiteral
     return formatToken
 
@@ -75,7 +82,7 @@ def knowledgeGraphSimialrityRatio(server_url, student_answer, model_answer):
             student_answer_tokens.append(token.text)
 
     for token in set(student_answer_tokens):
-        token = formatToken(str(token))
+        token = format_token(str(token))
         query = """
         SELECT
         ?subject ?predicate ?object
@@ -94,11 +101,8 @@ def knowledgeGraphSimialrityRatio(server_url, student_answer, model_answer):
         if converted["results"]["bindings"]:
             words_present += 1
 
-    # print(words_present)
-    # print(total_words)
-    semantic_mark = "{:.2f}".format((words_present / total_words) * 40)
-
-    return float(semantic_mark)
+    knowledge_graph_similarity = "{:.2f}".format((words_present / total_words) * 40)
+    return float(knowledge_graph_similarity)
 
 
 def rdf_triple_extraction(server_url, spos, spo_list):
