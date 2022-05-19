@@ -1,0 +1,552 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#"
+    xmlns:j.1="http://ontologydesignpatterns.org/cp/owl/semiotics.owl#"
+    xmlns:j.2="http://dbpedia.org/resource/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:j.3="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#"
+    xmlns:j.4="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+    xmlns:j.5="http://www.ontologydesignpatterns.org/ont/cnlp/dependencies.owl#"
+    xmlns:j.6="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:j.7="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#"
+    xmlns:j.8="http://www.essepuntato.it/2008/12/earmark#"
+    xmlns:j.9="http://www.w3.org/2006/03/wn/wn30/schema/"
+    xmlns:j.10="http://www.ontologydesignpatterns.org/ont/boxer/boxer.owl#"
+    xmlns:j.11="http://www.ontologydesignpatterns.org/ont/vn/abox/role/" > 
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasQuality">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Happen">
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#v"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+    <owl:equivalentClass rdf:resource="http://www.ontologydesignpatterns.org/ont/vn/data/Happen_48030000"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#equivalentClass">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#situation_1">
+    <j.0:involves rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Enzyme"/>
+    <j.7:as rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#produce_1"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Situation"/>
+    <j.0:involves rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#enzyme_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2008/12/earmark#begins">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#energy_1">
+    <j.4:hasQuality rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Increase"/>
+    <j.7:increaseKineticEnergyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#molecule_1"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#IncreaseKineticEnergy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologydesignpatterns.org/cp/owl/semiotics.owl#hasInterpretant">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_131_133_It">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It</rdfs:label>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">133</j.8:ends>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#PRP"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">131</j.8:begins>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <j.1:hasInterpretant rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#neuter_1"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Energy">
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#n"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/supersense-noun_phenomenon"/>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/synset-energy-noun-1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/d0.owl#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#TemperatureIncrease">
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Increase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Enzyme">
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#n"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse">
+    <j.8:hasContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As temperature increases so does photosynthesis and increased kinetic energy of molecules move faster and more collisions happens. It is the Optimum temperature for enzymes as more glucose is produced.</j.8:hasContent>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#StringDocuverse"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_80_89_molecules">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecules</rdfs:label>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">89</j.8:ends>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#NNS"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Molecule"/>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#molecule_1"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">80</j.8:begins>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#produce_1">
+    <j.11:Theme rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#glucose_1"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Produce"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2008/12/earmark#ends">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_111_121_collisions">
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Collision"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">111</j.8:begins>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#collision_1"/>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#NNS"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">121</j.8:ends>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">collisions</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_3_14_temperature">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temperature</rdfs:label>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Temperature"/>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#temperature_2"/>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#temperature_1"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</j.8:begins>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#NN"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">14</j.8:ends>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#subClassOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Optimum">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <j.10:possibleType rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#glucose_1">
+    <j.4:hasQuality rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#More"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#MoreGlucose"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#move_1">
+    <j.4:hasQuality rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Faster"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Move"/>
+    <j.4:hasQuality rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#More"/>
+    <j.11:Theme rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#energy_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#enzyme_1">
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Enzyme"/>
+    <rdf:type rdf:resource="http://dbpedia.org/resource/Enzyme"/>
+    <j.6:hasQuantifier rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#multiple"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#for">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_176_188_more+glucose">
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">188</j.8:ends>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">More Glucose</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">more glucose</rdfs:label>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#MoreGlucose"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">176</j.8:begins>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#happen_1">
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Happen"/>
+    <j.11:Theme rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#collision_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/cnlp/dependencies.owl#other_coref">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_90_94_move">
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#move_1"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">94</j.8:ends>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Move"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">90</j.8:begins>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">move</rdfs:label>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#VBP"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_15_24_increases">
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#NNS"/>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#increase_1"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">15</j.8:begins>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Increase"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">24</j.8:ends>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increases</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#pennpos">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_115_117_is">
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Eq"/>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">117</j.8:ends>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">115</j.8:begins>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is</rdfs:label>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#VBZ"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Do">
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#v"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Molecule">
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#n"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/vn/abox/role/Theme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_176_180_more">
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#More"/>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">180</j.8:ends>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">more</rdfs:label>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">176</j.8:begins>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">More</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Temperature">
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Temperature"/>
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#n"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Amount"/>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/synset-temperature-noun-1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/supersense-noun_attribute"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/d0.owl#Characteristic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_181_188_glucose">
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Glucose"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">181</j.8:begins>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#NN"/>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#glucose_1"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">glucose</rdfs:label>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">188</j.8:ends>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologydesignpatterns.org/cp/owl/semiotics.owl#denotes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/boxer/boxer.owl#possibleType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/boxer/boxing.owl#involves">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/boxer/boxer.owl#patient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#IncreaseKineticEnergy">
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#KineticEnergy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_52_61_increased">
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased</rdfs:label>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">61</j.8:ends>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">52</j.8:begins>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#VBD"/>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Increase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2008/12/earmark#refersTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_161_164_for">
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">164</j.8:ends>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">for</rdfs:label>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#IN"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">161</j.8:begins>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#For"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#increase_1">
+    <j.6:hasQuantifier rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#multiple"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#TemperatureIncrease"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Increase">
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#a"/>
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#n"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_28_32_does">
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#do_1"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">28</j.8:begins>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Do"/>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">does</rdfs:label>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#VBZ"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">32</j.8:ends>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#do_1">
+    <j.10:patient rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#photosynthesis_1"/>
+    <j.4:hasQuality rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#So"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#SoDo"/>
+    <j.10:agent rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#increase_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_0_2_As">
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#IN"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</j.8:ends>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#As"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</j.8:begins>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">As</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#molecule_1">
+    <j.6:hasQuantifier rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#multiple"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Molecule"/>
+    <rdf:type rdf:resource="http://dbpedia.org/resource/Molecule"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2006/03/wn/wn30/instances/synset-temperature-noun-1">
+    <j.9:gloss xml:lang="en-us">the degree of hotness or coldness of a body or environment (corresponding to its molecular activity)</j.9:gloss>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2006/03/wn/wn30/instances/synset-photosynthesis-noun-1">
+    <j.9:gloss xml:lang="en-us">synthesis of compounds with the aid of radiant energy (especially in plants)</j.9:gloss>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_192_200_produced">
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">192</j.8:begins>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#VBN"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">200</j.8:ends>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Produce"/>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#produce_1"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">produced</rdfs:label>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_33_47_photosynthesis">
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#photosynthesis_1"/>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#NN"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">47</j.8:ends>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">33</j.8:begins>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Photosynthesis"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">photosynthesis</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#neuter_1">
+    <j.5:other_coref rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Optimum"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Collision">
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#n"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#boxerpos">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#as">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#SoDo">
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Do"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/boxer/boxer.owl#agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.essepuntato.it/2008/12/earmark#hasContent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_62_69_kinetic">
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">62</j.8:begins>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Kinetic"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">69</j.8:ends>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kinetic</rdfs:label>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#JJ"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_149_160_temperature">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Temperature</rdfs:label>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temperature</rdfs:label>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">160</j.8:ends>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">149</j.8:begins>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Temperature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#a"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Temperature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#So">
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#temperature_2">
+    <j.4:associatedWith rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Optimum"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Temperature"/>
+    <j.7:for rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#enzyme_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#increaseKineticEnergyOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_95_101_faster">
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#RBR"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">faster</rdfs:label>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">95</j.8:begins>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">101</j.8:ends>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Faster"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#situation_2">
+    <j.0:involves rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#move_1"/>
+    <j.7:as rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#happen_1"/>
+    <j.0:involves rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#increase_1"/>
+    <j.0:involves rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#do_1"/>
+    <j.0:involves rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#photosynthesis_1"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Situation"/>
+    <j.0:involves rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#molecule_1"/>
+    <j.0:involves rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#energy_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Kinetic">
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#a"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality"/>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/synset-kinetic-adjective-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Faster">
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_25_27_so">
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">27</j.8:ends>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">so</rdfs:label>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#RB"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">25</j.8:begins>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#So"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Produce">
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#v"/>
+    <owl:equivalentClass rdf:resource="http://www.ontologydesignpatterns.org/ont/vn/data/Produce_26070200"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#MoreGlucose">
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Glucose"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_141_148_Optimum">
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">141</j.8:begins>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#NNP"/>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Optimum"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Optimum</rdfs:label>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">148</j.8:ends>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_77_79_of">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">of</rdfs:label>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">79</j.8:ends>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#IN"/>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">77</j.8:begins>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Of"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2006/03/wn/wn30/instances/synset-glucose-noun-1">
+    <j.9:gloss xml:lang="en-us">a monosaccharide sugar that has several forms; an important source of physiological energy</j.9:gloss>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Glucose">
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Glucose"/>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/synset-glucose-noun-1"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/supersense-noun_substance"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PhysicalObject"/>
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#n"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_62_76_kinetic+energy">
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">62</j.8:begins>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kinetic Energy</rdfs:label>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kinetic energy</rdfs:label>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#KineticEnergy"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">76</j.8:ends>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#More">
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/synset-more-adjective-1"/>
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#collision_1">
+    <j.6:hasQuantifier rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#multiple"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Collision"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#photosynthesis_1">
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Photosynthesis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_70_76_energy">
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">76</j.8:ends>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">energy</rdfs:label>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#NN"/>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Energy"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">70</j.8:begins>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#energy_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/fred/quantifiers.owl#hasQuantifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#KineticEnergy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Energy"/>
+    <j.4:hasQuality rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Kinetic"/>
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Kinetic_energy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#temperature_1">
+    <j.4:associatedWith rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#increase_1"/>
+    <j.4:associatedWith rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#situation_2"/>
+    <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Temperature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_165_172_enzymes">
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#NNS"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enzymes</rdfs:label>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">165</j.8:begins>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">172</j.8:ends>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Enzyme"/>
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#enzyme_1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_106_110_more">
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#RBR"/>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">106</j.8:begins>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#More"/>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#JJR"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">110</j.8:ends>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">more</rdfs:label>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_122_129_happens">
+    <j.1:denotes rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#happen_1"/>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#VBZ"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">129</j.8:ends>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Happen"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">happens</rdfs:label>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">122</j.8:begins>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#offset_173_175_as">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">as</rdfs:label>
+    <j.8:begins rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">173</j.8:begins>
+    <j.1:hasInterpretant rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#As"/>
+    <j.3:pennpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#IN"/>
+    <rdf:type rdf:resource="http://www.essepuntato.it/2008/12/earmark#PointerRange"/>
+    <j.8:ends rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">175</j.8:ends>
+    <j.8:refersTo rdf:resource="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#docuverse"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Photosynthesis">
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#n"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Process"/>
+    <owl:equivalentClass rdf:resource="http://dbpedia.org/resource/Photosynthesis"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/supersense-noun_process"/>
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/synset-photosynthesis-noun-1"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#associatedWith">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2006/03/wn/wn30/instances/synset-energy-noun-1">
+    <j.9:gloss xml:lang="en-us">(physics) a thermodynamic quantity equivalent to the capacity of a physical system to do work; the units of energy are joules or ergs; "energy can take a wide variety of forms"</j.9:gloss>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ontologydesignpatterns.org/ont/e-valuator/domain.owl#Move">
+    <owl:equivalentClass rdf:resource="http://www.w3.org/2006/03/wn/wn30/instances/synset-travel-verb-1"/>
+    <owl:equivalentClass rdf:resource="http://www.ontologydesignpatterns.org/ont/vn/data/Move_11020000"/>
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event"/>
+    <j.3:boxerpos rdf:resource="http://www.ontologydesignpatterns.org/ont/fred/pos.owl#v"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -10,7 +10,7 @@ nlp = spacy.load('en_core_web_md')
 # keyword generation is executed when the evaluator hasn't included any keywords in the marking scheme
 def generate_keywords(model_answer):
     kw_model = KeyBERT()
-    # extracting the top 5 keywords
+    # extracting the top 10 keywords
     model_keywords = kw_model.extract_keywords(model_answer, keyphrase_ngram_range=(1, 1),
                                                stop_words='english', highlight=True, top_n=10)
 
@@ -60,14 +60,3 @@ def get_fuzzy_keyword_similarity(student_answer, model_answer, dictionary=None):
         keyword_similarity_score = 0
 
     return dictionary, matched_keywords, float(keyword_similarity_score)
-
-
-# # # testing method
-# test_student = "this sentence is wrong Photosynthesis"
-# test_model = "Photosynthesis is the process by which plants use, water, and carbon to create and energy in the form of."
-#
-# required_keywords, matched_keyword, keyword_similarity_score = get_fuzzy_keyword_similarity(test_student, test_model,
-#                                                                                             ["Photosynthesis"])
-# print(required_keywords)
-# print(matched_keyword)
-# print(keyword_similarity_score)
